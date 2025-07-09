@@ -1,0 +1,4 @@
+include 'capella-ta',
+    'capella-ta-ui',
+    'capella-ta-test',
+    'capella-ta-test-rc'
