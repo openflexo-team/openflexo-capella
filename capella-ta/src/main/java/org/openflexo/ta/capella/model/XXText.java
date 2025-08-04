@@ -36,6 +36,7 @@
  * 
  */
 
+/*
 package org.openflexo.ta.capella.model;
 
 import java.util.List;
@@ -66,7 +67,7 @@ import org.openflexo.pamela.annotations.XMLElement;
  * @author sylvain
  *
  */
-@ModelEntity
+/*@ModelEntity
 @ImplementationClass(value = XXText.XXTextImpl.class)
 public interface XXText extends XXObject, ResourceData<XXText> {
 
@@ -78,14 +79,14 @@ public interface XXText extends XXObject, ResourceData<XXText> {
 	 * 
 	 * @return
 	 */
-	public String getContents();
+	/* public String getContents();
 
 	/**
 	 * Return all {@link XXLine} defined in this {@link XXText}
 	 * 
 	 * @return
 	 */
-	@Getter(value = LINES_KEY, cardinality = Cardinality.LIST, inverse = XXLine.XX_TEXT_KEY)
+	/*@Getter(value = LINES_KEY, cardinality = Cardinality.LIST, inverse = XXLine.XX_TEXT_KEY)
 	@XMLElement
 	@Embedded
 	@CloningStrategy(StrategyType.CLONE)
@@ -107,7 +108,7 @@ public interface XXText extends XXObject, ResourceData<XXText> {
 	 * @author sylvain
 	 *
 	 */
-	public static abstract class XXTextImpl extends XXObjectImpl implements XXText {
+	/*public static abstract class XXTextImpl extends XXObjectImpl implements XXText {
 
 		@SuppressWarnings("unused")
 		private static final Logger logger = Logger.getLogger(XXObjectImpl.class.getPackage().getName());
@@ -161,4 +162,4 @@ public interface XXText extends XXObject, ResourceData<XXText> {
 
 	}
 
-}
+}*/

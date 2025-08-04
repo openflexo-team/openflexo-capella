@@ -5,6 +5,7 @@ dependencies {
   // external dep
   // Define here your dependancies
   //implementation 'my.library:artefact-name:1.0.0'
+  implementation 'org.openflexo:emf-ta:2.99'
 
   // testing dep
   testImplementation testUtils()

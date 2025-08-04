@@ -35,7 +35,7 @@
  * or visit www.openflexo.org if you need additional information.
  * 
  */
-
+/*
 package org.openflexo.ta.capella.model;
 
 import java.util.logging.Logger;
@@ -58,7 +58,7 @@ import org.openflexo.pamela.annotations.XMLElement;
  * @author sylvain
  *
  */
-@ModelEntity
+/*@ModelEntity
 @ImplementationClass(value = XXLine.XXLineImpl.class)
 @XMLElement
 public interface XXLine extends XXObject {
@@ -75,7 +75,7 @@ public interface XXLine extends XXObject {
 	 * 
 	 * @return
 	 */
-	@Getter(value = XX_TEXT_KEY)
+	/*@Getter(value = XX_TEXT_KEY)
 	public XXText getXXText();
 
 	/**
@@ -83,7 +83,7 @@ public interface XXLine extends XXObject {
 	 * 
 	 * @param text
 	 */
-	@Setter(XX_TEXT_KEY)
+	/*@Setter(XX_TEXT_KEY)
 	public void setXXText(XXText text);
 
 	/**
@@ -91,7 +91,7 @@ public interface XXLine extends XXObject {
 	 * 
 	 * @return
 	 */
-	@Getter(value = VALUE_KEY)
+	/*@Getter(value = VALUE_KEY)
 	public String getValue();
 
 	/**
@@ -99,7 +99,7 @@ public interface XXLine extends XXObject {
 	 * 
 	 * @return
 	 */
-	@Setter(VALUE_KEY)
+	/*@Setter(VALUE_KEY)
 	public void setValue(String aValue);
 
 	/**
@@ -107,7 +107,7 @@ public interface XXLine extends XXObject {
 	 * 
 	 * @return
 	 */
-	@Getter(value = INDEX_KEY, defaultValue = "-1")
+	/*@Getter(value = INDEX_KEY, defaultValue = "-1")
 	public int getIndex();
 
 	/**
@@ -115,7 +115,7 @@ public interface XXLine extends XXObject {
 	 * 
 	 * @return
 	 */
-	@Setter(INDEX_KEY)
+	/*@Setter(INDEX_KEY)
 	public void setIndex(int index);
 
 	/**
@@ -124,7 +124,7 @@ public interface XXLine extends XXObject {
 	 * @author sylvain
 	 *
 	 */
-	public static abstract class XXLineImpl extends XXObjectImpl implements XXLine {
+	/*public static abstract class XXLineImpl extends XXObjectImpl implements XXLine {
 
 		@SuppressWarnings("unused")
 		private static final Logger logger = Logger.getLogger(XXLine.class.getPackage().getName());
@@ -138,4 +138,4 @@ public interface XXLine extends XXObject {
 		}
 
 	}
-}
+}*/

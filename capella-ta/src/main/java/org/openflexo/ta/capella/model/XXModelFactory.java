@@ -37,7 +37,7 @@
  */
 
 package org.openflexo.ta.capella.model;
-
+/*
 import java.util.logging.Logger;
 
 import org.openflexo.foundation.PamelaResourceModelFactory;
@@ -56,7 +56,7 @@ import org.openflexo.ta.capella.rm.XXTextResource;
  * @author sylvain
  * 
  */
-public class XXModelFactory extends PamelaModelFactory implements PamelaResourceModelFactory<XXTextResource> {
+/*public class XXModelFactory extends PamelaModelFactory implements PamelaResourceModelFactory<XXTextResource> {
 
 	@SuppressWarnings("unused")
 	private static final Logger logger = Logger.getLogger(XXModelFactory.class.getPackage().getName());
@@ -108,4 +108,4 @@ public class XXModelFactory extends PamelaModelFactory implements PamelaResource
 
 	}
 
-}
+}*/

@@ -37,7 +37,7 @@
  */
 
 package org.openflexo.ta.capella.fml;
-
+/*
 import java.lang.reflect.Type;
 
 import org.openflexo.foundation.fml.FlexoRole;
@@ -57,7 +57,7 @@ import org.openflexo.ta.capella.model.XXLine;
  * @author sylvain
  *
  */
-@ModelEntity
+/*@ModelEntity
 @ImplementationClass(XXLineRole.XXLineRoleImpl.class)
 @XMLElement
 @FML("XXLineRole")
@@ -97,3 +97,4 @@ public interface XXLineRole extends FlexoRole<XXLine> {
 
 	}
 }
+*/

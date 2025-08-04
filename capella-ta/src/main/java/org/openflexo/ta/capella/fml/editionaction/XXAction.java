@@ -37,7 +37,7 @@
  */
 
 package org.openflexo.ta.capella.fml.editionaction;
-
+/*
 import org.openflexo.foundation.fml.editionaction.TechnologySpecificActionDefiningReceiver;
 import org.openflexo.pamela.annotations.ModelEntity;
 import org.openflexo.ta.capella.CapellaModelSlot;
@@ -51,8 +51,8 @@ import org.openflexo.ta.capella.model.XXText;
  * @param <T>
  *            object type
  */
-
+/*
 @ModelEntity(isAbstract = true)
 public interface XXAction<T extends Object> extends TechnologySpecificActionDefiningReceiver<CapellaModelSlot, XXText, T> {
 
-}
+}*/

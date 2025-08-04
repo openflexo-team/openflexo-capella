@@ -37,7 +37,7 @@
  */
 
 package org.openflexo.ta.capella.view;
-
+/*
 import java.awt.BorderLayout;
 import java.util.List;
 import java.util.Vector;
@@ -49,7 +49,7 @@ import javax.swing.JTextArea;
 import org.openflexo.foundation.FlexoObject;
 import org.openflexo.selection.SelectionListener;
 import org.openflexo.selection.SelectionManager;
-import org.openflexo.ta.capella.model.XXText;
+//import org.openflexo.ta.capella.model.XXText;
 import org.openflexo.view.SelectionSynchronizedModuleView;
 import org.openflexo.view.controller.FlexoController;
 import org.openflexo.view.controller.model.FlexoPerspective;
@@ -60,10 +60,10 @@ import org.openflexo.view.controller.model.FlexoPerspective;
  * @author sylvain
  * 
  */
-@SuppressWarnings("serial")
+/*@SuppressWarnings("serial")
 public class XXTextView extends JPanel implements SelectionSynchronizedModuleView<XXText> {
 
-	private final XXText text;
+	//private final XXText text;
 	private final FlexoPerspective declaredPerspective;
 
 	private final FlexoController controller;
@@ -201,5 +201,5 @@ public class XXTextView extends JPanel implements SelectionSynchronizedModuleVie
 	public boolean mayRepresents(FlexoObject anObject) {
 		return false;
 	}
-
-}
+	
+}*/

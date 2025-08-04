@@ -36,7 +36,7 @@ package org.openflexo.technologyadapter.capella.model;
  * or visit www.openflexo.org if you need additional information.
  * 
  */
-
+/*
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
@@ -108,4 +108,4 @@ public class TestLoadXXDocuments extends AbstractXXTest {
 		assertEquals("test", text.getLines().get(3).getValue());
 		assertEquals("file", text.getLines().get(4).getValue());
 	}
-}
+}*/

@@ -37,7 +37,7 @@
  */
 
 package org.openflexo.ta.capella.fml.editionaction;
-
+/*
 import org.openflexo.foundation.fml.annotations.FML;
 import org.openflexo.foundation.fml.editionaction.FetchRequest;
 import org.openflexo.foundation.fml.editionaction.UniqueFetchRequest;
@@ -54,10 +54,10 @@ import org.openflexo.ta.capella.model.XXText;
  * @author sylvain
  * 
  */
-@ModelEntity
+/*@ModelEntity
 @ImplementationClass(SelectUniqueXXLine.AbstractSelectXXLineImpl.class)
 @XMLElement
 @FML("SelectUniqueXXLine")
 public interface SelectUniqueXXLine extends AbstractSelectXXLine<XXLine>, UniqueFetchRequest<CapellaModelSlot, XXText, XXLine> {
 
-}
+}*/

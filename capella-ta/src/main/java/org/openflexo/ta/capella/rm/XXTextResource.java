@@ -37,7 +37,7 @@
  */
 
 package org.openflexo.ta.capella.rm;
-
+/*
 import org.openflexo.foundation.resource.PamelaResource;
 import org.openflexo.foundation.technologyadapter.TechnologyAdapterResource;
 import org.openflexo.pamela.annotations.ImplementationClass;
@@ -52,7 +52,7 @@ import org.openflexo.ta.capella.model.XXText;
  * @author sylvain
  *
  */
-@ModelEntity
+/*@ModelEntity
 @ImplementationClass(XXTextResourceImpl.class)
 public interface XXTextResource extends TechnologyAdapterResource<XXText, CapellaTechnologyAdapter>, PamelaResource<XXText, XXModelFactory> {
 
@@ -61,6 +61,6 @@ public interface XXTextResource extends TechnologyAdapterResource<XXText, Capell
 	 * 
 	 * @return
 	 */
-	public XXText getXXText();
+	/*public XXText getXXText();
 
-}
+}*/

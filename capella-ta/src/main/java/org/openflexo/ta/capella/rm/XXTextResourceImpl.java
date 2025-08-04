@@ -37,7 +37,7 @@
  */
 
 package org.openflexo.ta.capella.rm;
-
+/*
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -70,7 +70,7 @@ import org.openflexo.toolbox.FileUtils;
  * @author sylvain
  *
  */
-public abstract class XXTextResourceImpl extends PamelaResourceImpl<XXText, XXModelFactory> implements XXTextResource {
+/*public abstract class XXTextResourceImpl extends PamelaResourceImpl<XXText, XXModelFactory> implements XXTextResource {
 
 	private static final Logger logger = Logger.getLogger(XXTextResourceImpl.class.getPackage().getName());
 
@@ -79,7 +79,7 @@ public abstract class XXTextResourceImpl extends PamelaResourceImpl<XXText, XXMo
 	 * 
 	 * @return
 	 */
-	@Override
+	/*@Override
 	public XXText getXXText() {
 		try {
 			return getResourceData();
@@ -124,7 +124,7 @@ public abstract class XXTextResourceImpl extends PamelaResourceImpl<XXText, XXMo
 	/**
 	 * Return type of {@link ResourceData}
 	 */
-	@Override
+	/*@Override
 	public Class<XXText> getResourceDataClass() {
 		return XXText.class;
 	}
@@ -134,7 +134,7 @@ public abstract class XXTextResourceImpl extends PamelaResourceImpl<XXText, XXMo
 	 * Initial resource is first copied, then we write in a temporary file, renamed at the end when the serialization has been successfully
 	 * performed
 	 */
-	@Override
+	/*@Override
 	protected void performSave(boolean clearIsModified) throws SaveResourceException {
 
 		if (getFlexoIOStreamDelegate() == null) {
@@ -193,7 +193,7 @@ public abstract class XXTextResourceImpl extends PamelaResourceImpl<XXText, XXMo
 	 * @return
 	 * @throws IOException
 	 */
-	private <I> XXText load(StreamIODelegate<I> ioDelegate) throws IOException {
+	/*private <I> XXText load(StreamIODelegate<I> ioDelegate) throws IOException {
 
 		XXText returned = getFactory().makeXXText();
 		try (BufferedReader br = new BufferedReader(new InputStreamReader(ioDelegate.getInputStream()))) {
@@ -218,7 +218,7 @@ public abstract class XXTextResourceImpl extends PamelaResourceImpl<XXText, XXMo
 	 * 
 	 * @throws IOException
 	 */
-	private void write(OutputStream out) throws SaveResourceException {
+	/*private void write(OutputStream out) throws SaveResourceException {
 		logger.info("Writing " + getIODelegate().getSerializationArtefact());
 		try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(out))) {
 			for (XXLine line : getXXText().getLines()) {
@@ -239,3 +239,4 @@ public abstract class XXTextResourceImpl extends PamelaResourceImpl<XXText, XXMo
 	}
 
 }
+*/

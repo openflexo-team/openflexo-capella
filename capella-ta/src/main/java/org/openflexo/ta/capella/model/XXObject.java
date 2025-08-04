@@ -37,7 +37,7 @@
  */
 
 package org.openflexo.ta.capella.model;
-
+/*
 import java.util.logging.Logger;
 
 import org.openflexo.foundation.InnerResourceData;
@@ -51,7 +51,7 @@ import org.openflexo.ta.capella.CapellaTechnologyAdapter;
  * @author sylvain
  *
  */
-@ModelEntity(isAbstract = true)
+/*@ModelEntity(isAbstract = true)
 public interface XXObject extends InnerResourceData<XXText>, TechnologyObject<CapellaTechnologyAdapter> {
 
 	public XXModelFactory getFactory();
@@ -62,7 +62,7 @@ public interface XXObject extends InnerResourceData<XXText>, TechnologyObject<Ca
 	 * @author sylvain
 	 *
 	 */
-	public static abstract class XXObjectImpl extends FlexoObjectImpl implements XXObject {
+	/*public static abstract class XXObjectImpl extends FlexoObjectImpl implements XXObject {
 
 		@SuppressWarnings("unused")
 		private static final Logger logger = Logger.getLogger(XXObjectImpl.class.getPackage().getName());
@@ -81,4 +81,4 @@ public interface XXObject extends InnerResourceData<XXText>, TechnologyObject<Ca
 		}
 
 	}
-}
+}*/

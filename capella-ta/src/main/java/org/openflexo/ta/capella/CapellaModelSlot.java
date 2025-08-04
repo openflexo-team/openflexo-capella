@@ -38,27 +38,12 @@
 
 package org.openflexo.ta.capella;
 
-import java.lang.reflect.Type;
-import java.util.logging.Logger;
-
-import org.openflexo.foundation.fml.FlexoRole;
-import org.openflexo.foundation.fml.annotations.DeclareActorReferences;
-import org.openflexo.foundation.fml.annotations.DeclareEditionActions;
-import org.openflexo.foundation.fml.annotations.DeclareFetchRequests;
-import org.openflexo.foundation.fml.annotations.DeclareFlexoRoles;
 import org.openflexo.foundation.fml.annotations.FML;
-import org.openflexo.foundation.technologyadapter.FreeModelSlot;
 import org.openflexo.foundation.technologyadapter.ModelSlot;
 import org.openflexo.pamela.annotations.ImplementationClass;
 import org.openflexo.pamela.annotations.ModelEntity;
 import org.openflexo.pamela.annotations.XMLElement;
-import org.openflexo.ta.capella.fml.XXLineActorReference;
-import org.openflexo.ta.capella.fml.XXLineRole;
-import org.openflexo.ta.capella.fml.editionaction.AddXXLine;
-import org.openflexo.ta.capella.fml.editionaction.SelectUniqueXXLine;
-import org.openflexo.ta.capella.fml.editionaction.SelectXXLine;
-import org.openflexo.ta.capella.model.XXText;
-import org.openflexo.ta.capella.rm.XXTextResource;
+import org.openflexo.technologyadapter.emf.EMFModelSlot;
 
 /**
  * Implementation of the {@link ModelSlot} class for the XX technology adapter (plain text connector)
@@ -66,43 +51,17 @@ import org.openflexo.ta.capella.rm.XXTextResource;
  * @author sylvain
  * 
  */
-@DeclareFlexoRoles({ XXLineRole.class })
-@DeclareEditionActions({ AddXXLine.class })
-@DeclareFetchRequests({ SelectUniqueXXLine.class, SelectXXLine.class })
-@DeclareActorReferences({ XXLineActorReference.class })
+//@DeclareFlexoRoles({ XXLineRole.class })
+//@DeclareEditionActions({ AddXXLine.class })
+//@DeclareFetchRequests({ SelectUniqueXXLine.class, SelectXXLine.class })
+//@DeclareActorReferences({ XXLineActorReference.class })
 @ModelEntity
-@ImplementationClass(CapellaModelSlot.XXModelSlotImpl.class)
+@ImplementationClass(CapellaModelSlot.CapellaModelSlotImpl.class)
 @XMLElement
-@FML("XXModelSlot")
-public interface CapellaModelSlot extends FreeModelSlot<XXText, XXTextResource> {
+@FML("CapellaModelSlot")
+public interface CapellaModelSlot extends EMFModelSlot {
 
-	public static abstract class XXModelSlotImpl extends FreeModelSlotImpl<XXText, XXTextResource> implements CapellaModelSlot {
-
-		@SuppressWarnings("unused")
-		private static final Logger logger = Logger.getLogger(CapellaModelSlot.class.getPackage().getName());
-
-		@Override
-		public Class<CapellaTechnologyAdapter> getTechnologyAdapterClass() {
-			return CapellaTechnologyAdapter.class;
-		}
-
-		@Override
-		public <PR extends FlexoRole<?>> String defaultFlexoRoleName(Class<PR> patternRoleClass) {
-			if (XXLineRole.class.isAssignableFrom(patternRoleClass)) {
-				return "line";
-			}
-			return null;
-		}
-
-		@Override
-		public Type getType() {
-			return XXText.class;
-		}
-
-		@Override
-		public CapellaTechnologyAdapter getModelSlotTechnologyAdapter() {
-			return (CapellaTechnologyAdapter) super.getModelSlotTechnologyAdapter();
-		}
+	public static abstract class CapellaModelSlotImpl extends EMFModelSlotImpl implements CapellaModelSlot {
 
 	}
 }

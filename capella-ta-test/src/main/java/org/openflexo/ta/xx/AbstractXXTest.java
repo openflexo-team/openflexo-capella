@@ -35,7 +35,7 @@
  * or visit www.openflexo.org if you need additional information.
  * 
  */
-
+/*
 package org.openflexo.ta.xx;
 
 import static org.junit.Assert.assertNotNull;
@@ -101,4 +101,4 @@ public abstract class AbstractXXTest extends OpenflexoProjectAtRunTimeTestCase {
 		return document;
 	}
 
-}
+}*/

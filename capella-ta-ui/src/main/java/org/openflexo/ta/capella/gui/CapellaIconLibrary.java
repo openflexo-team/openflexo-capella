@@ -44,12 +44,12 @@ import javax.swing.ImageIcon;
 
 import org.openflexo.icon.ImageIconResource;
 import org.openflexo.rm.ResourceLocator;
-import org.openflexo.ta.capella.model.XXLine;
-import org.openflexo.ta.capella.model.XXObject;
-import org.openflexo.ta.capella.model.XXText;
+//import org.openflexo.ta.capella.model.XXLine;
+//import org.openflexo.ta.capella.model.XXObject;
+//import org.openflexo.ta.capella.model.XXText;
 
 public class CapellaIconLibrary {
-
+	
 	private static final Logger logger = Logger.getLogger(CapellaIconLibrary.class.getPackage().getName());
 
 	public static final ImageIconResource CAPELLA_TA_BIG_ICON = new ImageIconResource(
@@ -60,7 +60,7 @@ public class CapellaIconLibrary {
 	public static final ImageIconResource XX_TEXT_ICON = new ImageIconResource(ResourceLocator.locateResource("Icons/XXText.png"));
 	public static final ImageIconResource XX_LINE_ICON = new ImageIconResource(ResourceLocator.locateResource("Icons/XXLine.png"));
 
-	public static ImageIcon iconForObject(Class<? extends XXObject> objectClass) {
+	/*public static ImageIcon iconForObject(Class<? extends XXObject> objectClass) {
 		if (XXText.class.isAssignableFrom(objectClass)) {
 			return XX_TEXT_ICON;
 		}
@@ -69,5 +69,5 @@ public class CapellaIconLibrary {
 		}
 		logger.warning("No icon for " + objectClass);
 		return null;
-	}
+	}*/
 }

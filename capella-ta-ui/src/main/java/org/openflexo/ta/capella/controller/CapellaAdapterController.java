@@ -45,19 +45,24 @@ import javax.swing.ImageIcon;
 import org.openflexo.foundation.FlexoObject;
 import org.openflexo.foundation.fml.FlexoRole;
 import org.openflexo.foundation.fml.editionaction.EditionAction;
+import org.openflexo.foundation.ontology.IFlexoOntology;
 import org.openflexo.foundation.technologyadapter.TechnologyObject;
 import org.openflexo.gina.utils.InspectorGroup;
 import org.openflexo.icon.IconFactory;
 import org.openflexo.icon.IconLibrary;
+import org.openflexo.ontology.components.widget.OntologyBrowserModel;
+import org.openflexo.ontology.controller.FlexoOntologyTechnologyAdapterController;
 import org.openflexo.ta.capella.CapellaTechnologyAdapter;
-import org.openflexo.ta.capella.fml.XXLineRole;
-import org.openflexo.ta.capella.fml.editionaction.AbstractSelectXXLine;
-import org.openflexo.ta.capella.fml.editionaction.AddXXLine;
 import org.openflexo.ta.capella.gui.CapellaIconLibrary;
-import org.openflexo.ta.capella.model.XXLine;
-import org.openflexo.ta.capella.model.XXObject;
-import org.openflexo.ta.capella.model.XXText;
-import org.openflexo.ta.capella.view.XXTextView;
+import org.openflexo.technologyadapter.emf.EMFTechnologyAdapter;
+//import org.openflexo.ta.capella.fml.XXLineRole;
+//import org.openflexo.ta.capella.fml.editionaction.AbstractSelectXXLine;
+//import org.openflexo.ta.capella.fml.editionaction.AddXXLine;
+//import org.openflexo.ta.capella.gui.CapellaIconLibrary;
+//import org.openflexo.ta.capella.model.XXLine;
+//import org.openflexo.ta.capella.model.XXObject;
+//import org.openflexo.ta.capella.model.XXText;
+//import org.openflexo.ta.capella.view.XXTextView;
 import org.openflexo.view.EmptyPanel;
 import org.openflexo.view.ModuleView;
 import org.openflexo.view.controller.ControllerActionInitializer;
@@ -65,159 +70,88 @@ import org.openflexo.view.controller.FlexoController;
 import org.openflexo.view.controller.TechnologyAdapterController;
 import org.openflexo.view.controller.model.FlexoPerspective;
 
-public class CapellaAdapterController extends TechnologyAdapterController<CapellaTechnologyAdapter> {
+public class CapellaAdapterController extends FlexoOntologyTechnologyAdapterController<EMFTechnologyAdapter> {
 
 	static final Logger logger = Logger.getLogger(CapellaAdapterController.class.getPackage().getName());
 
-	private InspectorGroup xxInspectorGroup;
-
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
-	public Class<CapellaTechnologyAdapter> getTechnologyAdapterClass() {
+	public Class getTechnologyAdapterClass() {
 		return CapellaTechnologyAdapter.class;
 	}
-
-	/**
-	 * Initialize inspectors for supplied module using supplied {@link FlexoController}
-	 * 
-	 * @param controller
-	 */
+	
 	@Override
-	protected void initializeInspectors(FlexoController controller) {
-
-		xxInspectorGroup = controller.loadInspectorGroup("XX", getTechnologyAdapter().getLocales(),
-				getFMLTechnologyAdapterInspectorGroup());
-	}
-
-	/**
-	 * Return inspector group for this technology
-	 * 
-	 * @return
-	 */
-	@Override
-	public InspectorGroup getTechnologyAdapterInspectorGroup() {
-		return xxInspectorGroup;
+	public OntologyBrowserModel<EMFTechnologyAdapter> makeOntologyBrowserModel(
+			IFlexoOntology<EMFTechnologyAdapter> context) {
+		return null;
 	}
 
 	@Override
 	protected void initializeActions(ControllerActionInitializer actionInitializer) {
-
-		// You can initialize here actions specific to that technology
+		// TODO Auto-generated method stub
+		
 	}
 
-	/**
-	 * Return icon representing underlying technology, required size is 32x32
-	 * 
-	 * @return
-	 */
+	@Override
+	protected void initializeInspectors(FlexoController controller) {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public InspectorGroup getTechnologyAdapterInspectorGroup() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	@Override
 	public ImageIcon getTechnologyBigIcon() {
 		return CapellaIconLibrary.CAPELLA_TA_BIG_ICON;
 	}
 
-	/**
-	 * Return icon representing underlying technology
-	 * 
-	 * @return
-	 */
 	@Override
 	public ImageIcon getTechnologyIcon() {
 		return CapellaIconLibrary.CAPELLA_TA_ICON;
 	}
 
-	/**
-	 * Return icon representing a model of underlying technology
-	 * 
-	 * @return
-	 */
 	@Override
 	public ImageIcon getModelIcon() {
 		return CapellaIconLibrary.XX_TEXT_ICON;
 	}
 
-	/**
-	 * Return icon representing a model of underlying technology
-	 * 
-	 * @return
-	 */
 	@Override
 	public ImageIcon getMetaModelIcon() {
 		return CapellaIconLibrary.XX_TEXT_ICON;
 	}
 
-	/**
-	 * Return icon representing supplied ontology object
-	 * 
-	 * @param object
-	 * @return
-	 */
 	@Override
 	public ImageIcon getIconForTechnologyObject(Class<? extends TechnologyObject<?>> objectClass) {
-		if (XXObject.class.isAssignableFrom(objectClass)) {
-			return CapellaIconLibrary.iconForObject((Class<? extends XXObject>) objectClass);
-		}
-		return null;
-	}
-
-	/**
-	 * Return icon representing supplied pattern property
-	 * 
-	 * @param object
-	 * @return
-	 */
-	@Override
-	public ImageIcon getIconForFlexoRole(Class<? extends FlexoRole<?>> patternRoleClass) {
-		if (XXLineRole.class.isAssignableFrom(patternRoleClass)) {
-			return getIconForTechnologyObject(XXLine.class);
-		}
-		return null;
-	}
-
-	/**
-	 * Return icon representing supplied edition action
-	 * 
-	 * @param object
-	 * @return
-	 */
-	@Override
-	public ImageIcon getIconForEditionAction(Class<? extends EditionAction> editionActionClass) {
-		if (AddXXLine.class.isAssignableFrom(editionActionClass)) {
-			return IconFactory.getImageIcon(getIconForTechnologyObject(XXLine.class), IconLibrary.DUPLICATE);
-		}
-		else if (AbstractSelectXXLine.class.isAssignableFrom(editionActionClass)) {
-			return IconFactory.getImageIcon(getIconForTechnologyObject(XXLine.class), IconLibrary.IMPORT);
-		}
-		return super.getIconForEditionAction(editionActionClass);
+		// On peut ajouter des classes Capella spécifiques ici plus tard
+		return getModelIcon();
 	}
 
 	@Override
-	public boolean isRepresentableInModuleView(TechnologyObject<CapellaTechnologyAdapter> object) {
-		return object instanceof XXText;
+	public ImageIcon getIconForFlexoRole(Class<? extends FlexoRole<?>> flexoRoleClass) {
+		// À compléter plus tard si tu as des rôles Capella (comme XXLineRole)
+		return getModelIcon();
 	}
-	
+
 	@Override
-	public FlexoObject getRepresentableMasterObject(TechnologyObject<CapellaTechnologyAdapter> object) {
-		if (object instanceof XXText) {
-			return object;
-		}
+	public boolean isRepresentableInModuleView(TechnologyObject<EMFTechnologyAdapter> object) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public FlexoObject getRepresentableMasterObject(TechnologyObject<EMFTechnologyAdapter> object) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String getWindowTitleforObject(TechnologyObject<CapellaTechnologyAdapter> object, FlexoController controller) {
-		if (object instanceof XXText) {
-			return ((XXText) object).getResource().getName();
-		}
-		return object.toString();
-	}
-
-	@Override
-	public ModuleView<?> createModuleViewForMasterObject(TechnologyObject<CapellaTechnologyAdapter> object, FlexoController controller,
-			FlexoPerspective perspective) {
-		if (object instanceof XXText) {
-			XXTextView returned = new XXTextView((XXText) object, controller, perspective);
-			return returned;
-		}
-		return new EmptyPanel<>(controller, perspective, object);
+	public ModuleView<?> createModuleViewForMasterObject(TechnologyObject<EMFTechnologyAdapter> object,
+			FlexoController controller, FlexoPerspective perspective) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

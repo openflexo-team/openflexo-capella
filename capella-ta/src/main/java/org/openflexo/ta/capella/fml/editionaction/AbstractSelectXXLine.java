@@ -37,7 +37,7 @@
  */
 
 package org.openflexo.ta.capella.fml.editionaction;
-
+/*
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
@@ -58,7 +58,8 @@ import org.openflexo.ta.capella.model.XXText;
  *
  * @param <AT>
  */
-@ModelEntity(isAbstract = true)
+
+/*@ModelEntity(isAbstract = true)
 @ImplementationClass(AbstractSelectXXLine.AbstractSelectXXLineImpl.class)
 public interface AbstractSelectXXLine<AT> extends AbstractFetchRequest<CapellaModelSlot, XXText, XXLine, AT> {
 
@@ -90,4 +91,4 @@ public interface AbstractSelectXXLine<AT> extends AbstractFetchRequest<CapellaMo
 		}
 
 	}
-}
+}*/

@@ -37,7 +37,7 @@
  */
 
 package org.openflexo.ta.capella.fml.editionaction;
-
+/*
 import java.util.List;
 
 import org.openflexo.foundation.fml.annotations.FML;
@@ -55,10 +55,10 @@ import org.openflexo.ta.capella.model.XXText;
  * @author sylvain
  * 
  */
-@ModelEntity
+/*@ModelEntity
 @ImplementationClass(SelectXXLine.AbstractSelectXXLineImpl.class)
 @XMLElement
 @FML("SelectXXLine")
 public interface SelectXXLine extends AbstractSelectXXLine<List<XXLine>>, FetchRequest<CapellaModelSlot, XXText, XXLine> {
 
-}
+}*/

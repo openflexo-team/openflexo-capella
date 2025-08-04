@@ -37,7 +37,7 @@
  */
 
 package org.openflexo.ta.capella.fml;
-
+/*
 import java.io.FileNotFoundException;
 import java.util.logging.Logger;
 
@@ -64,7 +64,7 @@ import org.openflexo.ta.capella.rm.XXTextResource;
  * @author sylvain
  * 
  */
-@ModelEntity
+/*@ModelEntity
 @ImplementationClass(XXLineActorReference.XXLineActorReferenceImpl.class)
 @XMLElement
 @FML("XXLineActorReference")
@@ -146,4 +146,4 @@ public interface XXLineActorReference extends ActorReference<XXLine> {
 
 	}
 
-}
+}*/

@@ -41,12 +41,8 @@ package org.openflexo.ta.capella;
 import java.util.logging.Logger;
 
 import org.openflexo.foundation.fml.annotations.DeclareModelSlots;
-import org.openflexo.foundation.fml.annotations.DeclareResourceFactories;
-import org.openflexo.foundation.resource.FlexoResourceCenter;
-import org.openflexo.foundation.technologyadapter.TechnologyAdapter;
-import org.openflexo.ta.capella.fml.binding.XXBindingFactory;
-import org.openflexo.ta.capella.rm.XXTextResourceFactory;
-import org.openflexo.ta.capella.rm.XXTextResourceRepository;
+import org.openflexo.technologyadapter.emf.EMFTechnologyAdapter;
+
 
 /**
  * This class defines and implements an archetype of a technology adapter<br>
@@ -61,58 +57,29 @@ import org.openflexo.ta.capella.rm.XXTextResourceRepository;
 @DeclareModelSlots({ CapellaModelSlot.class })
 // You might declare your own types here
 // @DeclareTechnologySpecificTypes({ YourCustomType.class })
-@DeclareResourceFactories({ XXTextResourceFactory.class })
-public class CapellaTechnologyAdapter extends TechnologyAdapter<CapellaTechnologyAdapter> {
+//@DeclareResourceFactories({ XXTextResourceFactory.class })
+public class CapellaTechnologyAdapter extends EMFTechnologyAdapter {
 
 	@SuppressWarnings("unused")
 	private static final Logger logger = Logger.getLogger(CapellaTechnologyAdapter.class.getPackage().getName());
-
-	private static final XXBindingFactory BINDING_FACTORY = new XXBindingFactory();
-
+	
+	public CapellaTechnologyAdapter() {
+		super();
+    }
+	
 	@Override
-	public String getName() {
-		return "Capella technology adapter";
-	}
+    public String getName() {
+        return "Capella Technology Adapter";
+    }
 
-	@Override
-	protected String getLocalizationDirectory() {
-		return "FlexoLocalization/CapellaTechnologyAdapter";
-	}
+    @Override
+    public String getIdentifier() {
+        return "CAPELLA";
+    }
 
-	@Override
-	public void ensureAllRepositoriesAreCreated(FlexoResourceCenter<?> rc) {
-		super.ensureAllRepositoriesAreCreated(rc);
-		getXXResourceRepository(rc);
-
-	}
-
-	@Override
-	public <I> boolean isIgnorable(FlexoResourceCenter<I> resourceCenter, I contents) {
-		return false;
-	}
-
-	@Override
-	public XXBindingFactory getTechnologyAdapterBindingFactory() {
-		return BINDING_FACTORY;
-	}
-
-	@Override
-	public String getIdentifier() {
-		return "CPL";
-	}
-
-	public XXTextResourceFactory getXXResourceFactory() {
-		return getResourceFactory(XXTextResourceFactory.class);
-	}
-
-	@SuppressWarnings("unchecked")
-	public <I> XXTextResourceRepository<I> getXXResourceRepository(FlexoResourceCenter<I> resourceCenter) {
-		XXTextResourceRepository<I> returned = resourceCenter.retrieveRepository(XXTextResourceRepository.class, this);
-		if (returned == null) {
-			returned = XXTextResourceRepository.instanciateNewRepository(this, resourceCenter);
-			resourceCenter.registerRepository(returned, XXTextResourceRepository.class, this);
-		}
-		return returned;
-	}
+    @Override
+    protected String getLocalizationDirectory() {
+        return "FlexoLocalization/CapellaTechnologyAdapter";
+    }
 
 }

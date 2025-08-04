@@ -37,7 +37,7 @@
  */
 
 package org.openflexo.ta.capella.rm;
-
+/*
 import java.util.logging.Logger;
 
 import org.openflexo.foundation.resource.FlexoResourceCenter;
@@ -55,7 +55,7 @@ import org.openflexo.ta.capella.model.XXText;
  * @author sylvain
  *
  */
-public class XXTextResourceFactory
+/*public class XXTextResourceFactory
 		extends TechnologySpecificPamelaResourceFactory<XXTextResource, XXText, CapellaTechnologyAdapter, XXModelFactory> {
 
 	@SuppressWarnings("unused")
@@ -96,3 +96,4 @@ public class XXTextResourceFactory
 	}
 
 }
+*/

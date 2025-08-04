@@ -37,7 +37,7 @@
  */
 
 package org.openflexo.ta.capella.fml.editionaction;
-
+/*
 import java.lang.reflect.Type;
 import java.util.logging.Logger;
 
@@ -158,4 +158,4 @@ public interface AddXXLine extends XXAction<XXLine> {
 
 	}
 
-}
+}*/
