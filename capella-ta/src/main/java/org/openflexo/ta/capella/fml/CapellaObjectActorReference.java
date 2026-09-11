@@ -65,10 +65,10 @@ import org.openflexo.ta.capella.rm.XXTextResource;
  * 
  */
 @ModelEntity
-@ImplementationClass(XXLineActorReference.XXLineActorReferenceImpl.class)
+@ImplementationClass(CapellaObjectActorReference.XXLineActorReferenceImpl.class)
 @XMLElement
 @FML("XXLineActorReference")
-public interface XXLineActorReference extends ActorReference<XXLine> {
+public interface CapellaObjectActorReference extends ActorReference<XXLine> {
 
 	@PropertyIdentifier(type = String.class)
 	public static final String OBJECT_URI_KEY = "objectURI";
@@ -80,9 +80,9 @@ public interface XXLineActorReference extends ActorReference<XXLine> {
 	@Setter(OBJECT_URI_KEY)
 	public void setObjectURI(String objectURI);
 
-	public abstract static class XXLineActorReferenceImpl extends ActorReferenceImpl<XXLine> implements XXLineActorReference {
+	public abstract static class XXLineActorReferenceImpl extends ActorReferenceImpl<XXLine> implements CapellaObjectActorReference {
 
-		private static final Logger logger = FlexoLogger.getLogger(XXLineActorReference.class.getPackage().toString());
+		private static final Logger logger = FlexoLogger.getLogger(CapellaObjectActorReference.class.getPackage().toString());
 
 		private XXLine object;
 		private String objectURI;
