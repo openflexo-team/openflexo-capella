@@ -109,7 +109,8 @@ public class CapellaTechnologyAdapter extends TechnologyAdapter<CapellaTechnolog
 		XXTextResourceRepository<I> returned = resourceCenter.retrieveRepository(XXTextResourceRepository.class, this);
 		if (returned == null) {
 			returned = XXTextResourceRepository.instanciateNewRepository(this, resourceCenter);
-			resourceCenter.registerRepository(returned, XXTextResourceRepository.class, this);
+			// Another thread may have registered one meanwhile: use the registered one (CORE-D-25)
+			returned = resourceCenter.registerRepository(returned, XXTextResourceRepository.class, this);
 		}
 		return returned;
 	}
