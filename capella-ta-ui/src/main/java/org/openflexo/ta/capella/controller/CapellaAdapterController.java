@@ -50,7 +50,7 @@ import org.openflexo.gina.utils.InspectorGroup;
 import org.openflexo.icon.IconFactory;
 import org.openflexo.icon.IconLibrary;
 import org.openflexo.ta.capella.CapellaTechnologyAdapter;
-import org.openflexo.ta.capella.fml.XXLineRole;
+import org.openflexo.ta.capella.fml.CapellaObjectRole;
 import org.openflexo.ta.capella.fml.editionaction.AbstractSelectXXLine;
 import org.openflexo.ta.capella.fml.editionaction.AddXXLine;
 import org.openflexo.ta.capella.gui.CapellaIconLibrary;
@@ -166,7 +166,7 @@ public class CapellaAdapterController extends TechnologyAdapterController<Capell
 	 */
 	@Override
 	public ImageIcon getIconForFlexoRole(Class<? extends FlexoRole<?>> patternRoleClass) {
-		if (XXLineRole.class.isAssignableFrom(patternRoleClass)) {
+		if (CapellaObjectRole.class.isAssignableFrom(patternRoleClass)) {
 			return getIconForTechnologyObject(XXLine.class);
 		}
 		return null;

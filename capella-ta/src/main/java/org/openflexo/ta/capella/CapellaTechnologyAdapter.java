@@ -40,7 +40,6 @@ package org.openflexo.ta.capella;
 
 import java.util.logging.Logger;
 
-import org.openflexo.foundation.fml.annotations.DeclareModelSlots;
 import org.openflexo.foundation.fml.annotations.DeclareResourceFactories;
 import org.openflexo.foundation.resource.FlexoResourceCenter;
 import org.openflexo.foundation.technologyadapter.TechnologyAdapter;
@@ -58,7 +57,7 @@ import org.openflexo.ta.capella.rm.XXTextResourceRepository;
  * @author sylvain
  * 
  */
-@DeclareModelSlots({ CapellaModelSlot.class })
+// @DeclareModelSlots({ CapellaModelSlot.class })
 // You might declare your own types here
 // @DeclareTechnologySpecificTypes({ YourCustomType.class })
 @DeclareResourceFactories({ XXTextResourceFactory.class })
@@ -110,7 +109,8 @@ public class CapellaTechnologyAdapter extends TechnologyAdapter<CapellaTechnolog
 		XXTextResourceRepository<I> returned = resourceCenter.retrieveRepository(XXTextResourceRepository.class, this);
 		if (returned == null) {
 			returned = XXTextResourceRepository.instanciateNewRepository(this, resourceCenter);
-			resourceCenter.registerRepository(returned, XXTextResourceRepository.class, this);
+			// Another thread may have registered one meanwhile: use the registered one (CORE-D-25)
+			returned = resourceCenter.registerRepository(returned, XXTextResourceRepository.class, this);
 		}
 		return returned;
 	}

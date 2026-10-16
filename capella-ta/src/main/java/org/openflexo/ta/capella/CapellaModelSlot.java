@@ -42,21 +42,9 @@ import java.lang.reflect.Type;
 import java.util.logging.Logger;
 
 import org.openflexo.foundation.fml.FlexoRole;
-import org.openflexo.foundation.fml.annotations.DeclareActorReferences;
-import org.openflexo.foundation.fml.annotations.DeclareEditionActions;
-import org.openflexo.foundation.fml.annotations.DeclareFetchRequests;
-import org.openflexo.foundation.fml.annotations.DeclareFlexoRoles;
-import org.openflexo.foundation.fml.annotations.FML;
 import org.openflexo.foundation.technologyadapter.FreeModelSlot;
 import org.openflexo.foundation.technologyadapter.ModelSlot;
-import org.openflexo.pamela.annotations.ImplementationClass;
-import org.openflexo.pamela.annotations.ModelEntity;
-import org.openflexo.pamela.annotations.XMLElement;
-import org.openflexo.ta.capella.fml.XXLineActorReference;
-import org.openflexo.ta.capella.fml.XXLineRole;
-import org.openflexo.ta.capella.fml.editionaction.AddXXLine;
-import org.openflexo.ta.capella.fml.editionaction.SelectUniqueXXLine;
-import org.openflexo.ta.capella.fml.editionaction.SelectXXLine;
+import org.openflexo.ta.capella.fml.CapellaObjectRole;
 import org.openflexo.ta.capella.model.XXText;
 import org.openflexo.ta.capella.rm.XXTextResource;
 
@@ -66,14 +54,14 @@ import org.openflexo.ta.capella.rm.XXTextResource;
  * @author sylvain
  * 
  */
-@DeclareFlexoRoles({ XXLineRole.class })
+/*@DeclareFlexoRoles({ XXLineRole.class })
 @DeclareEditionActions({ AddXXLine.class })
 @DeclareFetchRequests({ SelectUniqueXXLine.class, SelectXXLine.class })
 @DeclareActorReferences({ XXLineActorReference.class })
 @ModelEntity
 @ImplementationClass(CapellaModelSlot.XXModelSlotImpl.class)
 @XMLElement
-@FML("XXModelSlot")
+@FML("XXModelSlot")*/
 public interface CapellaModelSlot extends FreeModelSlot<XXText, XXTextResource> {
 
 	public static abstract class XXModelSlotImpl extends FreeModelSlotImpl<XXText, XXTextResource> implements CapellaModelSlot {
@@ -88,7 +76,7 @@ public interface CapellaModelSlot extends FreeModelSlot<XXText, XXTextResource> 
 
 		@Override
 		public <PR extends FlexoRole<?>> String defaultFlexoRoleName(Class<PR> patternRoleClass) {
-			if (XXLineRole.class.isAssignableFrom(patternRoleClass)) {
+			if (CapellaObjectRole.class.isAssignableFrom(patternRoleClass)) {
 				return "line";
 			}
 			return null;

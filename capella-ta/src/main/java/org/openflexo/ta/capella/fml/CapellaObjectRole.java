@@ -58,12 +58,12 @@ import org.openflexo.ta.capella.model.XXLine;
  *
  */
 @ModelEntity
-@ImplementationClass(XXLineRole.XXLineRoleImpl.class)
+@ImplementationClass(CapellaObjectRole.XXLineRoleImpl.class)
 @XMLElement
-@FML("XXLineRole")
-public interface XXLineRole extends FlexoRole<XXLine> {
+@FML("CapellaObjectRole")
+public interface CapellaObjectRole extends FlexoRole<XXLine> {
 
-	public static abstract class XXLineRoleImpl extends FlexoRoleImpl<XXLine> implements XXLineRole {
+	public static abstract class XXLineRoleImpl extends FlexoRoleImpl<XXLine> implements CapellaObjectRole {
 
 		@Override
 		public Type getType() {
@@ -82,8 +82,8 @@ public interface XXLineRole extends FlexoRole<XXLine> {
 
 		@Override
 		public ActorReference<XXLine> makeActorReference(XXLine object, FlexoConceptInstance fci) {
-			AbstractVirtualModelInstanceModelFactory<?> factory = fci.getFactory();
-			XXLineActorReference returned = factory.newInstance(XXLineActorReference.class);
+			AbstractVirtualModelInstanceModelFactory factory = fci.getFactory();
+			CapellaObjectActorReference returned = factory.newInstance(CapellaObjectActorReference.class);
 			returned.setFlexoRole(this);
 			returned.setFlexoConceptInstance(fci);
 			returned.setModellingElement(object);
