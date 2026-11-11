@@ -47,7 +47,6 @@ import org.openflexo.foundation.fml.rt.ActorReference;
 import org.openflexo.foundation.fml.rt.FlexoConceptInstance;
 import org.openflexo.pamela.annotations.ImplementationClass;
 import org.openflexo.pamela.annotations.ModelEntity;
-import org.openflexo.pamela.annotations.XMLElement;
 import org.openflexo.ta.capella.CapellaTechnologyAdapter;
 import org.openflexo.ta.capella.model.XXLine;
 
@@ -59,7 +58,6 @@ import org.openflexo.ta.capella.model.XXLine;
  */
 @ModelEntity
 @ImplementationClass(CapellaObjectRole.XXLineRoleImpl.class)
-@XMLElement
 @FML("CapellaObjectRole")
 public interface CapellaObjectRole extends FlexoRole<XXLine> {
 
