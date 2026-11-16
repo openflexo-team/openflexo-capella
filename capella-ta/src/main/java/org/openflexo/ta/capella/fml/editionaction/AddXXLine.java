@@ -38,13 +38,13 @@
 
 package org.openflexo.ta.capella.fml.editionaction;
 
+import org.openflexo.foundation.fml.rt.error.FMLNullReferenceError;
+import org.openflexo.foundation.fml.rt.error.FMLEvaluation;
 import org.openflexo.foundation.fml.rt.error.FMLExecutionException;
 import java.lang.reflect.Type;
 import java.util.logging.Logger;
 
 import org.openflexo.connie.DataBinding;
-import org.openflexo.connie.exception.NullReferenceException;
-import org.openflexo.connie.exception.TypeMismatchException;
 import org.openflexo.foundation.fml.annotations.FML;
 import org.openflexo.foundation.fml.rt.RunTimeEvaluationContext;
 import org.openflexo.foundation.fml.validation.BindingIsRequiredAndMustBeValid;
@@ -91,29 +91,21 @@ public interface AddXXLine extends XXAction<XXLine> {
 
 			XXText resourceData = getReceiver(evaluationContext);
 
-			try {
-				if (resourceData != null) {
-					Integer lineNumber = getLineNumber().getBindingValue(evaluationContext);
-					if (lineNumber != null) {
-						System.out.println("TODO: addLine not implemented");
-						resourceData.setIsModified();
-						resourceData.setModified(true);
+			if (resourceData != null) {
+				Integer lineNumber = FMLEvaluation.evaluate(getLineNumber(), evaluationContext, this);
+				if (lineNumber != null) {
+					// Not implemented: nothing is added (the warning replaces the former System.out)
+					logger.warning("addLine is not implemented: nothing is added");
+					resourceData.setIsModified();
+					resourceData.setModified(true);
 
-					}
-					else {
-						logger.warning("Create a row requires a index");
-					}
 				}
 				else {
-					logger.warning("Cannot add line in null resource data");
+					throw new FMLNullReferenceError("Create a row requires a index");
 				}
-
-			} catch (TypeMismatchException e) {
-				e.printStackTrace();
-			} catch (NullReferenceException e) {
-				e.printStackTrace();
-			} catch (ReflectiveOperationException e) {
-				e.printStackTrace();
+			}
+			else {
+				throw new FMLNullReferenceError("Cannot add line in null resource data");
 			}
 
 			return line;
