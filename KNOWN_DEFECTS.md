@@ -2,6 +2,8 @@
 
 ## CAPELLA-D-1 — `TestLoadXXDocuments.testXXContents` looks up the resource center of the xx template  ·  `TODO`
 
+**GitHub:** [openflexo-team/openflexo-capella#1](https://github.com/openflexo-team/openflexo-capella/issues/1)
+
 **Symptom.** `capella-ta-test`: `TestLoadXXDocuments.testXXContents` fails with a `NullPointerException`
 (`resourceCenter` is null in `AbstractXXTest.getXXResource`); the 5 other tests pass.
 
